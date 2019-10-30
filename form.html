@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <title>Form</title>
+    <link rel="stylesheet" href="form2.css">
+</head>
+<body>
+	<script>
+	function insert(){
+		document.forms['Record'].action='retrieve.php';
+		document.forms['Record'].submit();
+
+	}
+	function delete1(){
+		document.forms['Record'].action='delete.php';
+		document.forms['Record'].submit();
+
+	}
+	function update(){
+		document.forms['Record'].action='update.php';
+		document.forms['Record'].submit();
+
+	}
+	</script>
+    <div class= "div3">
+        logged in as user: 2002 on Phone:sip/2002 to campaign:VBROAD
+        </div>
+
+    <div class="div4">
+        2019 01:57:216<br>
+        Calls in Queue in 100
+        <h4 style="text-align: right; color: black; margin: 0px; margin-right: 20px">NO LIVE CALL</h4>
+        </div>
+	<div class="div2">
+<br></br>
+<br></br>
+<br></br>
+		<h4 margin="50px">STATUS:</h4>
+ 
+		<button style="background-color: rgb(23, 250, 174)">
+			DIAL NEXT NUMBER 
+		</button><br>
+		<input type="checkbox" style="align-content: center"> LEAD PREVIEW <br> 
+		RECORDING FILE: <br>
+		<br>
+		Record ID: <br>
+		&nbsp;&nbsp;&nbsp;<input type="radio"><br>
+		<button>FORM1</button><br>
+		<button>FORM2</button><br><br>   
+		<button>TRANSFER / CONF</button><br><br>
+		<button style="background-color: rgb(247, 58, 86); border: 1px solid #EB30B5">HANGUP CUSTOMER</button><br><br>
+		<button style="size:4px;background-color: rgb(243, 11, 46)">SEND DTMF</button> <input type="text">
+	</div>
+	<div class="div1">
+		<table width="100%">
+			<tr>
+				<td>
+					Customer Time:
+				</td>
+				<td>
+					Channel:
+				</td>
+				<td>
+					seconds:
+				</td>
+			</tr>
+		</table>
+		<h2>Customer Information</h2>
+		<form  name="Record" action="connect.php" method="POST">
+
+			<p>Title: <input type="text" name="Title" style="margin-left: 31px"> First: <input type="text" name="Firstname"> Last: <input type="text" name="Lastname"></p>
+			
+			<p>Address3: <input type="text" name="Address3"  size="81"></p>
+			<p>Address1: <input type="text"  size="20">
+				Address2: <input type="text" size="46">
+			</p>
+			<p>City: <input type="text" size="20" style="margin-left: 33px; margin-right: 28px">
+				State: <input type="text" size="5" style="margin-right: 28px">
+				Postcode: <input type="text" size="22">
+			</p>
+			
+			<p>Province: <input type="text" size="20" style="margin-left: 4px">
+				VendorID: <input type="text" size="5" style="margin-right: 35px">
+				Gender: <select name="slct" id="slct"> 
+            		<option>Undefined</option> 
+            		<option value="1">male</option> 
+            		<option value="2">female</option> 
+            		<option value="3">Other</option>
+        		</select>
+			</p>
+			<p>Phone: <input type="text" name="Phone" size="15" style="margin-left: 21px; margin-right: 33px">
+				Dial Code: <input type="text" size="5">
+				Alt. Phone: <input type="text" size="10">
+			</p>
+			<p>Show: <input type="text" size="15" style="margin-left: 24px">
+				Email: <input type="text" size="50">
+			</p>
+			<p>Comment: <textarea class="comment"></textarea></p>
+			<input type="submit" style="margin-left:310px;font-style: italic" value="submit">
+			<input type="button" value="insert" onclick="insert();"/>
+			<input type="button" value="Delete" onclick="delete1();"/>
+			<input type="button" value="Update" onclick="update();"/>
+		</form>
+	</div>
+</body>
+</html>
